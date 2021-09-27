@@ -13,7 +13,7 @@ Globals:
 Resources:
 
   MyLayer:
-    Type: 'AWS::Serverless::LayerVersion'
+    Type: AWS::Serverless::LayerVersion
     Properties:
       ContentUri: layers/hello.zip
 
