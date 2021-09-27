@@ -23,7 +23,14 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+      layers:
+        - !Ref MyLayer
 
+  MyLayer:
+    Type: 'AWS::Serverless::LayerVersion'
+    Properties:
+      ContentUri: s3://sam-demo-bucket/layer.zip
+      
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
