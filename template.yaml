@@ -15,8 +15,8 @@ Resources:
   MyLayer:
     Type: 'AWS::Serverless::LayerVersion'
     Properties:
-      ContentUri: s3://sam-demo-bucket/layer.zip
-      
+      ContentUri: layers/hello.zip
+
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
