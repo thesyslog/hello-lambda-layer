@@ -11,6 +11,12 @@ Globals:
     Timeout: 3
 
 Resources:
+
+  MyLayer:
+    Type: 'AWS::Serverless::LayerVersion'
+    Properties:
+      ContentUri: s3://sam-demo-bucket/layer.zip
+      
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -26,11 +32,7 @@ Resources:
       layers:
         - !Ref MyLayer
 
-  MyLayer:
-    Type: 'AWS::Serverless::LayerVersion'
-    Properties:
-      ContentUri: s3://sam-demo-bucket/layer.zip
-      
+
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
