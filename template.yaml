@@ -21,7 +21,7 @@ Resources:
   PVutilsLayer:
     Type: AWS::Serverless::LayerVersion
     Properties:
-      ContentUri: ../sared-resources/src/layers/pvutils
+      ContentUri: ../shared-resources/src/layers/pvutils
     Metadata:
       BuildMethod: python3.8    
 
