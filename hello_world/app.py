@@ -34,7 +34,7 @@ def lambda_handler(event, context):
 
     #     raise e
     OID_USER_FIELDS = pv.OID_USER_FIELDS
-    welcome = list( lambda x: f"Hello {x}", h.USERS_NAMES )
+    welcome = list( map( lambda x: f"Hello {x}", h.USERS_NAMES ) )
     return {
         "statusCode": 200,
         "body": json.dumps({
