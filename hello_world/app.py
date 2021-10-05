@@ -1,6 +1,7 @@
 import json
 from hello import config
-# import requests
+from pvutils import config
+import requests
 
 
 def lambda_handler(event, context):
@@ -32,7 +33,8 @@ def lambda_handler(event, context):
     #     print(e)
 
     #     raise e
-
+    OID_USER_FIELDS = config.OID_USER_FIELDS
+    welcome = list( lambda x: f"Hello {x}", config.USERS_NAMES )
     return {
         "statusCode": 200,
         "body": json.dumps({
